@@ -1,0 +1,88 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cyan"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/login"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/location" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp"
+            android:text="@string/locate"
+            android:textColor="@color/purple"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="30dp"
+            android:layout_height="34dp"
+            android:layout_gravity="end"
+            android:layout_marginLeft="80dp"
+            android:background="@drawable/potlocator" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+
+        <EditText
+            android:id="@+id/t_location"
+            android:layout_width="263dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="e.g. 340 W 11th Street"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/search"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:text="Search" />
+
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.05"
+        tools:context="android.com.mapmap.fragments.Locate" />
+
+    <Button
+        android:id="@+id/btn_locate_pot"
+        android:layout_width="381dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:text="@string/locate_pothole" />
+
+    <TextView
+        android:id="@+id/showLocation"
+        android:layout_width="match_parent"
+        android:layout_height="87dp"
+        android:minLines="8"
+        android:text="Location: \n"
+        android:layout_weight="0.10" />
+
+</LinearLayout>
